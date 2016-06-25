@@ -1,12 +1,31 @@
 language: python
-python:
-    - "3.2"
-    - "3.3"
-    - "3.4"
-    - "3.5"
-    - "3.5-dev"
+matrix:
+  include:
+  - os: linux
+    dist: trusty
+    python: '2.6'
+  - os: linux
+    dist: trusty
+    python: '2.7'
+  - os: linux
+    dist: trusty
+    python: '3.3'
+  - os: linux
+    dist: trusty
+    python: '3.4'
+  - os: linux
+    dist: trusty
+    python: '3.5'
+  - os: osx
+    language: objective-c
+    env: PYENV_VERSION=2.7.11
+  - os: osx
+    language: objective-c
+    env: PYENV_VERSION=3.5.1
 install:
-    - python3 setup.py install
+  - python2 setup.py install
+  - python3 setup.py install
 script:
-    - python3 example.py
+  - python2 example.py
+  - python3 example.py
 sudo: true
