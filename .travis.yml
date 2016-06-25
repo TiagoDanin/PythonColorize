@@ -11,8 +11,8 @@ os:
     - linux
     - osx
 install:
-    - python2 setup.py install
-    - python3 setup.py install
+    - sudo python2 setup.py install
+    - sudo python3 setup.py install
 script:
     - python2 example.py
     - python3 example.py
