@@ -265,7 +265,7 @@ class colors:
 	bg_lg_hide_cyan    = prefix + str(hide) + ';' + str(bg_light + c) + 'm'
 	bg_lg_hide_white   = prefix + str(hide) + ';' + str(bg_light + w) + 'm'
 
-def colorize(text=None, color=None, style=None, light=None):
+def colorize(text=None, color=None, style=None, light=None, background=None):
 	param = colors.color
 	param_color = 7
 	param_style = 0
@@ -304,7 +304,12 @@ def colorize(text=None, color=None, style=None, light=None):
 			param_style = style
 
 	if light:
-		param = colors.light
+		if background:
+			param = colors.bg_light
+		else:
+			param = colors.light
+	elif background:
+		param = colors.bg_color
 
 	apply_text = '{n1}{text}{n2}'.format(n1=colors.prefix + str(param_style) +\
 										';' + str(param + param_color) + 'm',
