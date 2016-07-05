@@ -1,5 +1,27 @@
 # -*- coding:utf-8 -*-
 class colors:
+	'''
+	Colors  | Styles             |
+	--------|--------------------|
+	black   | bold               |
+	red     | dark               |
+	green   | underline          |
+	yellow  | negative           |
+	blue    | hide               |
+	magenta |                    |
+	cyan    |                    |
+	white   |                    |
+
+	Params  | Result             |
+	--------|--------------------|
+	bg_     | background         |
+	lg_     | light              |
+	bg_lg_  | background & Light |
+
+	PythonColorize.colors.([param][style]_)[name]
+	(.) Optional
+	'''
+
 	#Prefix
 	prefix = '\033['
 	nocolor = prefix + '0m'
@@ -266,9 +288,27 @@ class colors:
 	bg_lg_hide_white   = prefix + str(hide) + ';' + str(bg_light + w) + 'm'
 
 def colorize(text=None, color=None, style=None, light=None, background=None):
+	'''
+	Colors  | Styles             |
+	--------|--------------------|
+	black   | bold               |
+	red     | dark               |
+	green   | underline          |
+	yellow  | negative           |
+	blue    | hide               |
+	magenta |                    |
+	cyan    |                    |
+	white   |                    |
+
+	PythonColorize.colorize(text=[text], color=[color], style=[style], light=[True|False], background=[True|False])
+	'''
+
 	param = colors.color
 	param_color = 7
 	param_style = 0
+	if text == None:
+		text = ''
+		
 	if color:
 		if color == 'black':
 			param_color = colors.b

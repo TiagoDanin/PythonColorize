@@ -4,7 +4,7 @@
 ## Requires
 Written for Python3.x
 
-But work with python2.X
+But work with python2.7
 
 ## Setup
 Open terminal:
@@ -19,16 +19,22 @@ or via pip:
 
 ## DOC
 
-Colors  | Styles    |
---------|-----------|
-black   | bold      |
-red     | dark      |
-green   | underline |
-yellow  | negative  |
-blue    | hide      |
-magenta |           |
-cyan    |           |
-white   |           |
+Colors  | Styles             |
+--------|--------------------|
+black   | bold               |
+red     | dark               |
+green   | underline          |
+yellow  | negative           |
+blue    | hide               |
+magenta |                    |
+cyan    |                    |
+white   |                    |
+
+Params  | Result             |
+--------|--------------------|
+bg_     | background         |
+lg_     | light              |
+bg_lg_  | background & Light |
 
 Module function:
 
@@ -36,14 +42,7 @@ Module function:
 
 > <.> Optional
 
-
- Params | Option     |
---------|------------|
-lg_     | light      |
-bg_     | background |
-
-
-- Colorize `PythonColorize.colorize(text=[text], color=[color], style=[style], light=[True|False])`
+- Colorize `PythonColorize.colorize(text=[text], color=[color], style=[style], light=[True|False], background=[True|False])`
 
 ## Pages
 Module [File](https://github.com/TiagoDanin/PythonColorize/blob/master/PythonColorize.py)
